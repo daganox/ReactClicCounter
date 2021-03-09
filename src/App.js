@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStore from './configureStore';
 import history from './utils/history';
 import Home from './containers/HomeContainer';
+import Counter from './containers/CounterContainer';
 // Create redux store with history
 const initialState = {};
 const store = configureStore(initialState, history);
@@ -16,6 +17,7 @@ class App extends Component {
           <h1>Clic Counter </h1>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/counter" component={Counter} />
             <Route component={() => (<h2>Page introuvable</h2>)} />
           </Switch>
         </Router>
